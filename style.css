@@ -20,6 +20,13 @@ section {
   background: #fff;
   border-radius: 8px;
 }
+h1 {
+  font-family: "Copperplate Gothic", "Copperplate", serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #003366;
+  letter-spacing: 2px; /* optional: to mimic the wide letter spacing of Copperplate */
+}
 
 h2 {
   color: #003366;
