@@ -2,103 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CMP Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condensed Matter Physics Lab</title>
   <style>
+    /* Basic Styling & Layout */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
     }
 
-    /* Sidebar */
+    /* Sidebar Styling */
     .sidebar {
-      width: 200px;
+      width: 250px;
       background-color: #003366;
       color: white;
       height: 100vh;
-      padding: 20px 10px;
+      padding: 20px 0;
       box-sizing: border-box;
       position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar-brand {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 0 10px;
     }
 
-    .sidebar h2 {
-      font-size: 18px;
-      margin-bottom: 20px;
+    .sidebar-brand img {
+      width: 80px; /* Adjust size as needed */
+      margin-bottom: 10px;
     }
 
-    .sidebar a {
+    .sidebar-brand h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .sidebar-nav {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .sidebar-nav li a {
       color: white;
       text-decoration: none;
       display: block;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
+      padding: 12px 20px;
+      transition: background-color 0.3s;
     }
 
-    .sidebar a:hover {
+    .sidebar-nav li a:hover,
+    .sidebar-nav li a.active {
       background-color: #0059b3;
     }
 
-    /* Main content */
+    /* Main Content Styling */
     .main-content {
-      margin-left: 220px;
+      margin-left: 250px;
+      padding: 40px;
+    }
+    
+    .hero-section {
+      background-color: #e9ecef;
+      padding: 50px;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    .hero-section h1 {
+      font-family: 'Georgia', serif;
+      color: #003366;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+
+    .content-section {
+      background-color: #ffffff;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .content-section h2 {
+      color: #003366;
+      border-bottom: 2px solid #0059b3;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    /* People Grid */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .person-card {
+      text-align: center;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
       padding: 20px;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .person-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #0059b3;
     }
 
-    header h1 {
-      font-family: "Copperplate Gothic", "Copperplate", serif;
+    .person-card h4 {
+      margin: 0;
       color: #003366;
     }
 
-    .lab-logo {
-      height: 50px;
+    /* Publications List */
+    .publication-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .publication-list h4 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: #003366;
+    }
+    
+    .publication-list .authors {
+      font-style: italic;
+      color: #6c757d;
+      font-size: 0.9em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding-bottom: 0;
+      }
+      .sidebar-brand img {
+        width: 60px;
+      }
+      .sidebar-nav {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .sidebar-nav li {
+        width: 100%;
+        text-align: center;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .hero-section {
+        padding: 30px;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
   <div class="sidebar">
-    <h2>CMP Lab</h2>
-    <a href="#overview">Overview</a>
-    <a href="#members">Members</a>
-    <a href="#contact">Contact</a>
+    <div class="sidebar-brand">
+      <img src="LOGO.png" alt="CMP Lab Logo">
+      <h2>CMP Lab</h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
 
-  <!-- Main content -->
   <div class="main-content">
-    <header>
+    
+    <div class="hero-section">
       <h1>Condensed Matter Physics (CMP) Lab</h1>
-      <img src="LOGO.png" alt="CMP Lab Logo" class="lab-logo">
-    </header>
-    <h3>Department of Physics, Jashore University of Science and Technology</h3>
+      <p>Department of Physics, Jashore University of Science and Technology</p>
+    </div>
 
-    <section id="overview">
+    <section id="overview" class="content-section">
       <h2>Overview</h2>
-      <p>The CMP Lab is focused on computational condensed matter physics. We investigate materials using DFT to support research in energy, spintronics, and optoelectronics.</p>
+      <p>The CMP Lab is focused on **computational condensed matter physics**. We use cutting-edge theoretical methods, including **Density Functional Theory (DFT)**, to investigate the fundamental properties of materials. Our research supports critical advancements in **energy storage**, **spintronics**, and **optoelectronics**. We aim to design novel materials with specific electronic, magnetic, and optical properties, contributing to both foundational physics and practical technological applications.</p>
     </section>
 
-    <section id="members">
-      <h2>Lab Members</h2>
+    <section id="research" class="content-section">
+      <h2>Research</h2>
+      <p>Our research is structured around several key themes:</p>
       <ul>
-        <li><strong>Faculty:</strong> Md. Mehade Hasan, Debashis Roy, Mohammad Tanvir Ahmed, Abdullah Al Roman</li>
-        <li><strong>Graduate Students:</strong> [List names]</li>
-        <li><strong>Undergraduate Researchers:</strong> [List names]</li>
+        <li>**Spintronic Materials:** Investigating materials for next-generation data storage and processing, focusing on magnetic properties and spin-dependent transport.</li>
+        <li>**Energy Storage:** Designing and simulating novel materials for batteries and supercapacitors with improved efficiency and longevity.</li>
+        <li>**Optoelectronic Devices:** Exploring materials with unique optical and electronic properties for applications in solar cells, LEDs, and photodetectors.</li>
+        <li>**Topological Matter:** Studying materials with robust quantum states for potential applications in fault-tolerant quantum computing.</li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: cmplab@just.edu.bd</p>
-      <p>Location: Department of Physics, JUST, Jashore-7408, Bangladesh</p>
+    <section id="publications" class="content-section">
+      <h2>Publications</h2>
+      <p>Here are some of our most recent publications. For a full list, please see our <a href="#">Google Scholar profile</a>.</p>
+      <ul class="publication-list">
+        <li>
+          <h4>DFT study on the electronic and magnetic properties of perovskite oxides</h4>
+          <p class="authors">M. M. Hasan, D. Roy, and M. T. Ahmed</p>
+          <p><em>Journal of Applied Physics,</em> 2024</p>
+        </li>
+        <li>
+          <h4>High-performance Li-ion battery anode materials from first-principles calculations</h4>
+          <p class="authors">A. A. Roman, M. M. Hasan, and S. Khatun</p>
+          <p><em>Physical Review B,</em> 2023</p>
+        </li>
+      </ul>
     </section>
-  </div>
 
+    <section id="members" class="content-section">
+      <h2>Lab Members</h2>
+      <p>Meet our dedicated team of researchers.</p>
+      <div class="people-grid">
+        <div class="person-card">
+          <img src="https://via.placeholder.com/120" alt="Md. Mehade Hasan">
+          <h4>Md. Mehade Hasan</h4>
+          <p><em>Principal Investigator</em></p>
+        </div>
+        <div class="person-card">
+          <img src="https://via.placeholder.com/120" alt="Debashis Roy">
+          <h4>Debashis Roy</h4>
+          <p><em>Faculty</em></p>
+        </div>
+        <div class="person-card">
+          <img src="https://via.placeholder.com/120" alt="Mohammad Tanvir Ahmed">
+          <h4>Mohammad Tanvir Ahmed</h4>
+          <p><em>Faculty</em></p>
+        </div>
+        <div class="person-card">
+          <img src="https://via.placeholder.com/120" alt="Abdullah Al Roman">
+          <h4>Abdullah Al Roman</h4>
+          <p><em>Faculty</em></p>
+        </div>
+        <div class="person-card">
+          <img src="https://via.placeholder.com/120" alt="Student Name">
+          <h4>[Student Name]</h4>
+          <p><em>Graduate Student</em></p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="news" class="content-section">
+      <h2>News</h2>
+      <ul>
+        <li>**July 31, 2025:** Our new paper on spintronic materials is accepted for publication in the *Journal of Magnetism and Magnetic Materials*.</li>
+        <li>**July 15, 2025:** Dr. Hasan gives an invited talk at the International Conference on Materials Science.</li>
+        <li>**June 20, 2025:** Welcome to our new graduate students, [Student A] and [Student B]!</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact</h2>
+      <p>For research inquiries or collaborations, please contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:cmplab@just.edu.bd">cmplab@just.edu.bd</a></p>
+      <p><strong>Location:</strong><br>
+         Department of Physics<br>
+         Jashore University of Science and Technology<br>
+         Jashore-7408, Bangladesh</p>
+    </section>
+
+  </div>
 </body>
 </html>
