@@ -16,8 +16,9 @@
     /* Sidebar Styling */
     .sidebar {
       width: 250px;
-      background-color: #003366;
-      color: white;
+      /* Changed to light gray with dark text */
+      background-color: #f0f2f5; 
+      color: #343a40;
       height: 100vh;
       padding: 20px 0;
       box-sizing: border-box;
@@ -42,6 +43,7 @@
     .sidebar-brand h2 {
       font-size: 20px;
       margin: 0;
+      color: #003366; /* Kept brand title color consistent */
     }
 
     .sidebar-nav {
@@ -50,7 +52,8 @@
     }
     
     .sidebar-nav li a {
-      color: white;
+      /* Changed link color to dark gray */
+      color: #343a40;
       text-decoration: none;
       display: block;
       padding: 12px 20px;
@@ -59,7 +62,9 @@
 
     .sidebar-nav li a:hover,
     .sidebar-nav li a.active {
-      background-color: #0059b3;
+      /* Adjusted hover color to a subtle light blue */
+      background-color: #e2e6ea;
+      color: #003366; /* Changed text color on hover */
     }
 
     /* Main Content Styling */
@@ -252,29 +257,24 @@
       <p>Meet our dedicated team of researchers.</p>
       <div class="people-grid">
         <div class="person-card">
-          <img src="https://via.placeholder.com/120" alt="Md. Mehade Hasan">
+          <img src="images/hasan.jpg" alt="Md. Mehade Hasan">
           <h4>Md. Mehade Hasan</h4>
           <p><em>Principal Investigator</em></p>
         </div>
         <div class="person-card">
-          <img src="https://via.placeholder.com/120" alt="Debashis Roy">
+          <img src="images/roy.jpg" alt="Debashis Roy">
           <h4>Debashis Roy</h4>
           <p><em>Faculty</em></p>
         </div>
         <div class="person-card">
-          <img src="https://via.placeholder.com/120" alt="Mohammad Tanvir Ahmed">
+          <img src="images/ahmed.jpg" alt="Mohammad Tanvir Ahmed">
           <h4>Mohammad Tanvir Ahmed</h4>
           <p><em>Faculty</em></p>
         </div>
         <div class="person-card">
-          <img src="https://via.placeholder.com/120" alt="Abdullah Al Roman">
+          <img src="images/roman.jpg" alt="Abdullah Al Roman">
           <h4>Abdullah Al Roman</h4>
           <p><em>Faculty</em></p>
-        </div>
-        <div class="person-card">
-          <img src="https://via.placeholder.com/120" alt="Student Name">
-          <h4>[Student Name]</h4>
-          <p><em>Graduate Student</em></p>
         </div>
       </div>
     </section>
