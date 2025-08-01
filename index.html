@@ -137,6 +137,25 @@
       margin: 0;
       color: #003366;
     }
+    .students-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    justify-content: space-between;
+}
+
+.student-list-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* For mobile devices, the columns will stack */
+@media (max-width: 768px) {
+    .students-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 
     /* Publications List */
     .publication-list {
@@ -200,7 +219,7 @@
 
   <div class="sidebar">
     <div class="sidebar-brand">
-      <img src="LOGO.png" alt="CMP Lab Logo" width="200">
+      <img src="LOGO.png" alt="CMP Lab Logo" width="400">
     </div>
     <ul class="sidebar-nav">
       <li><a href="#overview" class="active">Overview</a></li>
@@ -278,24 +297,23 @@
         </div>
       </div>
 
-  <div class="students-container">
-          <div class="student-list-column">
-              <h3>Graduate Members</h3>
-              <ul>
-                  <li>[Graduate Student Name 1]</li>
-                  <li>[Graduate Student Name 2]</li>
-                  <li>[Graduate Student Name 3]</li>
-                  </ul>
-          </div>
-          
-          <div class="student-list-column">
-              <h3>Undergraduate Members</h3>
-              <ul>
-                  <li>[Undergraduate Student Name 1]</li>
-                  <li>[Undergraduate Student Name 2]</li>
-                  <li>[Undergraduate Student Name 3]</li>
-                  </ul>
-          </div>
+<div class="students-container">
+    <div class="student-list-column">
+        <h3>Graduate Members</h3>
+        <ul>
+            <li>[Graduate Student Name 1]</li>
+            <li>[Graduate Student Name 2]</li>
+            </ul>
+    </div>
+    
+    <div class="student-list-column">
+        <h3>Undergraduate Members</h3>
+        <ul>
+            <li>[Undergraduate Student Name 1]</li>
+            <li>[Undergraduate Student Name 2]</li>
+            </ul>
+    </div>
+
       </div>
     </section>
     </section>
