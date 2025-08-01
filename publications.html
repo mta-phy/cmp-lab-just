@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condensed Matter Physics Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic Styling & Layout */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      /* Changed to light gray with dark text */
+      background-color: #f0f2f5; 
+      color: #343a40;
+      height: 100vh;
+      padding: 20px 0;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar-brand {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+
+    .sidebar-brand img {
+      width: 150px; /* Adjust size as needed */
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-brand h2 {
+      font-size: 20px;
+      margin: 0;
+      color: #003366; /* Kept brand title color consistent */
+    }
+
+    .sidebar-nav {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .sidebar-nav li a {
+      /* Changed link color to dark gray */
+      color: #343a40;
+      text-decoration: none;
+      display: block;
+      padding: 12px 20px;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar-nav li a:hover,
+    .sidebar-nav li a.active {
+      /* Adjusted hover color to a subtle light blue */
+      background-color: #e2e6ea;
+      color: #003366; /* Changed text color on hover */
+    }
+
+    /* Main Content Styling */
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+    }
+    
+    .hero-section {
+      background-color: #e9ecef;
+      padding: 50px;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    .hero-section h1 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: #660000;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+
+    .content-section {
+      background-color: #ffffff;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .content-section h2 {
+      color: #003366;
+      border-bottom: 2px solid #0059b3;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    /* People Grid */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .person-card {
+      text-align: center;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .person-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #0059b3;
+    }
+
+    .person-card h4 {
+      margin: 0;
+      color: #003366;
+    }
+    .students-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    justify-content: space-between;
+}
+
+.student-list-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* For mobile devices, the columns will stack */
+@media (max-width: 768px) {
+    .students-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+    /* Publications List */
+    .publication-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .publication-list h4 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: #003366;
+    }
+    
+    .publication-list .authors {
+      font-style: italic;
+      color: #6c757d;
+      font-size: 0.9em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding-bottom: 0;
+      }
+
+      .sidebar-nav {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .sidebar-nav li {
+        width: 100%;
+        text-align: center;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .hero-section {
+        padding: 30px;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <img src="LOGO.png" alt="CMP Lab Logo" width="100">
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="members.html">Members</a></li> 
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    
+    <div class="hero-section">
+      <h1>Condensed Matter Physics (CMP) Lab</h1>
+      <p>Department of Physics, Jashore University of Science and Technology</p>
+    </div>
+
+
+    <section id="publications" class="content-section">
+      <h2>Publications</h2>
+      <p>Here are some of our most recent publications. For a full list, please see our <a href="#">Google Scholar profile</a>.</p>
+      <ul class="publication-list">
+        <li>
+          <h4>DFT study on the electronic and magnetic properties of perovskite oxides</h4>
+          <p class="authors">M. M. Hasan, D. Roy, and M. T. Ahmed</p>
+          <p><em>Journal of Applied Physics,</em> 2024</p>
+        </li>
+        <li>
+          <h4>High-performance Li-ion battery anode materials from first-principles calculations</h4>
+          <p class="authors">A. A. Roman, M. M. Hasan, and S. Khatun</p>
+          <p><em>Physical Review B,</em> 2023</p>
+        </li>
+      </ul>
+    </section>
+
+    
+    
+
+
+  </div>
+</body>
+</html>
 
