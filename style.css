@@ -38,4 +38,22 @@ footer {
   text-align: center;
   padding: 10px;
 }
+.students-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    justify-content: space-between;
+}
 
+.student-list-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* For mobile devices, the columns will stack */
+@media (max-width: 768px) {
+    .students-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
